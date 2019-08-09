@@ -170,7 +170,7 @@ MiAirPurifier.prototype = {
 					capabilities=miio:buzzer, miio:led-brightness, miio:switchable-led, pm2.5, relative-humidity, temperature, switchable-mode, mode, switchable-power, restorable-state, power, state
 				}
 				*/
-				if (device.matches('type:air-purifier')) {
+				//if (device.matches('type:air-purifier')) {
 					that.device = device;
 
 					logger.debug('Discovered Mi Air Purifier (%s) at %s', device.miioModel, that.ip);
@@ -225,9 +225,9 @@ MiAirPurifier.prototype = {
 							that.updateHumidity(value);
 						});
 					}
-				} else {
-					logger.debug('Device discovered at %s is not Mi Air Purifier', this.ip);
-				}
+				//} else {
+				//	logger.debug('Device discovered at %s is not Mi Air Purifier', this.ip);
+				//}
 			})
 			.catch(error => {
 				logger.debug('Failed to discover Mi Air Purifier at %s', this.ip);
